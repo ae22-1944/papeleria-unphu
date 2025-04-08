@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-5">
+  <h1 class="mb-4">Carrito de compras</h1>
+
+  {% if productos_en_carrito %}
+    <ul class="list-group mb-4">
+      {% for item in productos_en_carrito %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <strong>{{ item.producto.nombre }}</strong><br>
+          Cantidad: {{ item.cantidad }}<br>
+          Precio unitario: RD${{ item.producto.precio }}<br>
+          Subtotal: RD${{ item.subtotal }}
+        </div>
+        <img src="{{ item.producto.imagen_url }}" alt="{{ item.producto.nombre }}" width="80">
+
+        <!-- Botones para aumentar, disminuir o eliminar productos -->
+        <div class="btn-group">
+          <a href="{% url 'quitar_cantidad' item.producto.id %}" class="btn btn-warning btn-sm">-</a>
+          <a href="{% url 'agregar_cantidad' item.producto.id %}" class="btn btn-success btn-sm">+</a>
+          <a href="{% url 'eliminar_producto' item.producto.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <h4 class="text-end">Total: RD$ {{ total }}</h4>
+    <div class="text-end">
+      <a href="#" class="btn btn-success">Finalizar compra</a>
+    </div>
+  {% else %}
+    <p>Tu carrito está vacío.</p>
+  {% endif %}
+</div>
+{% endblock %}

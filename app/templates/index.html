@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+{% include 'carrusel.html' %}
+
+{% include 'categorias.html' %}
+
+<!-- Sección de productos populares -->
+<div class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-5">Productos recien agregados</h2>
+    {% include 'productos.html' with productos=productos%}
+    </div>
+  </div>
+</div>
+
+{% include 'beneficios.html' %}
+
+<!-- Sección de Noticias -->
+<div class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-5">Noticias</h2>
+    {% include 'noticias.html' with noticias=noticias%}
+    <div class="text-center mt-4">
+      <a href="{% url 'noticias' %}" class="btn btn-primary">Más noticias</a>
+    </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% load static %}
+<header>
+  <nav class="navbar navbar-expand-lg bg-principal">
+    <div class="container-fluid">
+      <!-- Izquierda: Logo y Marca -->
+      <a class="navbar-brand d-flex align-items-center text-white" href="{% url 'home' %}">
+        <img
+          src="{% static 'Logo.png' %}"
+          alt="Logo"
+          width="30"
+          height="24"
+          class="d-inline-block align-text-top me-2"
+        />
+        Papelería UNPHU
+      </a>
+
+      <!-- Botón colapsable para móviles -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCenter"
+        aria-controls="navbarCenter"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Centro: Enlaces de navegación -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarCenter">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'home' %}">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'productos' %}">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'noticias' %}">Noticias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'contacto' %}">Contacto</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Derecha: Íconos de usuario y carrito -->
+      <div class="d-flex">
+        <a href="{% url 'carrito' %}" class="btn btn-link me-2">
+          <i class="bi bi-cart3 text-white" style="font-size: 1.5rem"></i>
+        </a>
+        <a href="/admin/" class="btn btn-link">
+          <i class="bi bi-person text-white" style="font-size: 1.5rem"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>

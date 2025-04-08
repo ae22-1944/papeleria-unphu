@@ -1,0 +1,100 @@
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+    ></button>
+  </div>
+
+  <div class="carousel-inner">
+    <!-- Slide 1 -->
+    <div class="carousel-item active c-item">
+      <img
+        src="https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        class="d-block w-100 c-img"
+        alt="Útiles escolares"
+      />
+      <div class="carousel-caption top-0 mt-4">
+        <p class="mt-5 fs-3 text-uppercase">Vuelta a Clases</p>
+        <h1 class="display-1 fw-bolder text-capitalize">
+          Todo lo que necesitas para el nuevo ciclo escolar
+        </h1>
+        <a class="btn btn-primary px-4 py-2 fs-5 mt-4" href="{% url 'productos' %}">
+          Ver productos
+        </a>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item c-item">
+      <img
+        src="https://images.unsplash.com/photo-1631173716529-fd1696a807b0?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        class="d-block w-100 c-img"
+        alt="Artículos de oficina"
+      />
+      <div class="carousel-caption top-0">
+        <p class="mt-5 fs-3 text-uppercase">Oficina</p>
+        <h1 class="display-1 fw-bolder text-capitalize">
+          Organiza tu espacio de trabajo con estilo
+        </h1>
+        <a class="btn btn-primary px-4 py-2 fs-5 mt-4" href="{% url 'productos' %}">
+          Explorar catálogo
+        </a>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item c-item">
+      <img
+        src="https://images.unsplash.com/photo-1551925608-12e169132446?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        class="d-block w-100 c-img"
+        alt="Papelería creativa"
+      />
+      <div class="carousel-caption top-0">
+        <p class="mt-5 fs-3 text-uppercase">Papelería Creativa</p>
+        <h1 class="display-1 fw-bolder text-capitalize">
+          Inspírate con colores, texturas y diseño
+        </h1>
+
+        <a class="btn btn-primary px-4 py-2 fs-5 mt-4" href="{% url 'productos' %}">
+          Comprar ahora
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>

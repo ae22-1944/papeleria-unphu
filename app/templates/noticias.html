@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 g-4">
+    {% for x in noticias %}
+    <div class="col">
+      <div class="card h-100 shadow-lg border-light rounded-3">
+        <div class="row g-0">
+          {% if x.imagen_url %}
+          <div class="col-md-4">
+            <div class="img-container">
+              <img
+                src="{{ x.imagen_url }}"
+                class="img-fluid rounded-start img-noticia"
+                alt="{{ x.titulo }}"
+              />
+            </div>
+          </div>
+          {% endif %}
+          <div class="col-md-8">
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="card-title text-dark">{{ x.titulo }}</h5>
+              <p class="card-text">
+                <small class="text-muted">{{ x.fecha_publicacion|date:"d M Y, H:i" }}</small>
+              </p>
+              <p class="card-text text-muted">{{ x.contenido|truncatewords:20 }}</p>
+              <a href="{% url 'noticia_detalle' x.id %}" class="btn btn-outline-primary mt-3"
+                >Leer más</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

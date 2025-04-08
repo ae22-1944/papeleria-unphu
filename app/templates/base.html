@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Papelería UNPHU | Recinto Santo Domingo</title>
+    <meta
+      name="description"
+      content="Tienda oficial de papelería UNPHU. Venta de útiles escolares, artículos de oficina, materiales de arte y suministros académicos en República Dominicana."
+    />
+    <meta
+      name="keywords"
+      content="papelería, UNPHU, útiles escolares, oficina, materiales educativos, cuadernos, lapices, Santo Domingo, República Dominicana"
+    />
+
+    <meta property="title" content="Papelería UNPHU | Recinto Santo Domingo" />
+    <meta property="description" content="Tienda oficial de papelería UNPHU. Útiles escolares." />
+    <meta property="type" content="website" />
+    <meta property="url" content="https://www.papeleriaunphu.com" />
+    <meta property="image" content="{% static 'logo.png' %}" />
+
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    {% include 'header.html' %}
+    {% if messages %}
+  <div class="container mt-3">
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+
+
+
+    <main>{% block content %}{% endblock %}</main>
+
+    {% include 'footer.html' %}
+    <script src="{% static 'script.js' %}" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

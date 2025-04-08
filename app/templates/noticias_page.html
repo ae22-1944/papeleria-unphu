@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+<div class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-5">Noticias</h2>
+      {% include 'noticias.html' with noticias=noticias%}
+      <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center">
+          {% if noticias.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ noticias.previous_page_number }}" aria-label="Anterior">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          {% endif %}
+          <li class="page-item disabled">
+            <span class="page-link">
+              Página {{ noticias.number }} de {{ noticias.paginator.num_pages }}
+            </span>
+          </li>
+          {% if noticias.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ noticias.next_page_number }}" aria-label="Siguiente">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+      </div>
+    </div>
+  </div>
+{% endblock %}

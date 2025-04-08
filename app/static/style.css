@@ -1,0 +1,63 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.bg-principal {
+  background-color: #41964a;
+}
+
+.c-item {
+  height: 480px;
+}
+
+.c-img {
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.img-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+.img-noticia {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* Estilos para el badge del carrito */
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.start-100 {
+  right: 0;
+}
+
+.translate-middle {
+  transform: translate(50%, -50%);
+}
+
+.badge {
+  font-size: 0.8rem;
+}
+
+.card-hover-effect {
+  transition: transform 0.3s ease;
+}
+
+.card-hover-effect:hover {
+  transform: scale(1.03);
+  z-index: 2;
+}

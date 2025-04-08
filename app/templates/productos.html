@@ -1,0 +1,46 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  {% for x in productos %}
+  <div class="col">
+    <div class="card h-100 shadow-sm">
+      {% if x.imagen_url %}
+      <img src="{{ x.imagen_url }}" class="card-img-top" alt="{{ x.nombre }}" />
+      {% endif %}
+      <div class="card-body">
+        <h5 class="card-title">{{ x.nombre }}</h5>
+        <p class="card-text text-muted">RD${{ x.precio }}</p>
+        <p class="card-text">{{ x.descripcion|truncatewords:20 }}</p>
+        <a href="{% url 'agregar_a_carrito' x.id %}" class="btn btn-outline-primary mt-2">
+          <i class="bi bi-cart-plus"></i> Agregar al carrito
+        </a>
+      </div>
+      
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<nav aria-label="Page navigation" class="mt-4">
+  <ul class="pagination justify-content-center">
+    {% if productos.has_previous %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ productos.previous_page_number }}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    {% endif %}
+
+    <li class="page-item disabled">
+      <span class="page-link">
+        Página {{ productos.number }} de {{ productos.paginator.num_pages }}
+      </span>
+    </li>
+
+    {% if productos.has_next %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ productos.next_page_number }}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>

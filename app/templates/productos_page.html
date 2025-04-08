@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block content %}
+<div class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-5">Productos recien agregados</h2>
+      {% include 'productos.html' with productos=productos%}
+      </div>
+    </div>
+  </div>
+{% endblock %}
